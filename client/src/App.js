@@ -1,11 +1,11 @@
-
-import './App.css';
+import Chatbox from "./components/Chatbox.jsx";
+import "./styles/App.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello, Chat!</h1>
-    </div>
+    <>
+      <Chatbox />
+    </>
   );
 }
 

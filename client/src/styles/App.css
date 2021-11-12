@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,11 +35,19 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 
 /* //--------------------our code------------------------// */
 
 #grid {
-  display: grid
+  grid-area: partytime;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  width: 40vw
 }
