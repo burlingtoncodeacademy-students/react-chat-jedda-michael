@@ -9,29 +9,11 @@ export default function Chatbox(props) {
   //uses state to hold the result of the fetch
   const [allMessages, setAllMessages] = useState([]);
 
-  let count = 10;
-  let updater = 0;
-  function tenSeconds() {
-    let idForTimerProcess;
-
-    idForTimerProcess = setTimeout(counter, 10000);
-
-    function counter() {
-      count = count - 1;
-      console.log(count);
-      console.log(updater);
-      if (count === 0) {
-        count = 10;
-        tenSeconds();
-        updater = updater + 1;
-      } else {
-        idForTimerProcess = setTimeout(counter, 10000);
-      }
-    }
-  }
-  tenSeconds();
-
   useEffect(() => {
+    // countDownFrom(10);
+    // console.log("this one is in the useEffect=>", changed);
+    //^^were connected to my timer attempts
+
     //fetches information from a local API route set up on the server
     fetch("http://localhost:8000/allmessages")
       .then((res) => {
@@ -40,7 +22,8 @@ export default function Chatbox(props) {
       .then((json) => {
         setAllMessages(json);
       });
-  }, [updater]);
+  },[]);
+  //changed^ failed timer attempt
 
   return (
     <>
@@ -75,20 +58,50 @@ export default function Chatbox(props) {
     </>
   );
 }
+
+//various attempts to make a working timer that updates a variable
+//to tell chatbox when to fetch
+
+// let changed = false;
+// function countDownFrom(num) {
+//   setTimeout(tick, 1000);
+//   let changed = false;
+
+//   function tick() {
+//     console.log(num);
+//     num = num - 1;
+//     if (num <= 1) {
+//       changed = true;
+//       console.log("this is inside countdownfrom=>", changed);
+
+//       return changed;
+//     } else {
+//       setTimeout(tick, 1000);
+//     }
+
+//   }
+//   console.log("this is one scope up=>", changed)
+//   return changed;
+
+// }
+
 // function tenSeconds() {
-//   let idForTimerProcess;
-
-//   idForTimerProcess = setTimeout(counter, 1000);
-
+//   let idForTimerProcess = setTimeout(counter, 1000);
+//   let count = 10;
 //   function counter() {
-//     count = count - 1;
-//     console.log(count);
+//     let updater = 0;
 
+//     count = count - 1;
+//     // console.log(count);
+//     // console.log(updater);
 //     if (count === 0) {
-//       count = 10;
+//       updater = updater + 1;
 //       tenSeconds();
+//       return updater;
 //     } else {
 //       idForTimerProcess = setTimeout(counter, 1000);
 //     }
 //   }
-// }
+//   return updater;
+// };
+//tenSeconds()

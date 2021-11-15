@@ -40,7 +40,39 @@
 
 /* //--------------------our code------------------------// */
 
-#grid {
+*{
+  background-color: black;
+  font-family: "Avenir next", avenir-next;
+  color: greenyellow;
+  }
+  
+  #mainchat {
+    display: inline-grid;
+    grid-template-columns: 20vw 20vw 10vw 20vw 20vw;
+    grid-template-rows: auto;
+    grid-template-areas: ". welcome . registry registry";
+  
+  }
+  
+  #allmessages {
+    width: 50vw;
+    max-height: auto;
+    border-style: solid;
+    border-color: firebrick;
+    border-width: 2px;
+    margin: 5px;
+    padding: 5px;
+    overscroll-behavior-y: auto;
+  }
+
+
+
+
+
+
+
+
+/* #grid {
   grid-area: partytime;
   display: flex;
   flex-direction: column;
@@ -50,4 +82,4 @@
 
 table {
   width: 40vw
-}
+} */

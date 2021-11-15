@@ -49,32 +49,14 @@ app.listen(port, () => {
 //creating the Messages model utilizing the ChatSchema and the "messages" collection
 const Messages = mongoose.model("messages", ChatSchema);
 
-count = 10;
+app.get("/allmessages", async (req, res) => {
+  //assigning the result of a find on our Model to a variable
+  let allMessages = await Messages.find({});
+  //sending the result as a json to the page
+  res.json(allMessages);
+});
 
-function tenSeconds() {
-  let idForTimerProcess;
 
-  idForTimerProcess = setTimeout(counter, 1000);
-
-  function counter() {
-    count = count - 1;
-    console.log(count);
-
-    if (count === 0) {
-      app.get("/allmessages", async (req, res) => {
-        //assigning the result of a find on our Model to a variable
-        let allMessages = await Messages.find({});
-        //sending the result as a json to the page
-        res.json(allMessages);
-      });
-      count = 10;
-      tenSeconds();
-    } else {
-      idForTimerProcess = setTimeout(counter, 1000);
-    }
-  }
-}
-tenSeconds();
 //creating our API route for the front end to access the entries from the database
 
 app.post("/message", async (req, res) => {
