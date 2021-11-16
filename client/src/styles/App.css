@@ -1,0 +1,85 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+
+/* //--------------------our code------------------------// */
+
+*{
+  background-color: black;
+  font-family: "Avenir next", avenir-next;
+  color: greenyellow;
+  }
+  
+  #mainchat {
+    display: inline-grid;
+    grid-template-columns: 20vw 20vw 10vw 20vw 20vw;
+    grid-template-rows: auto;
+    grid-template-areas: ". welcome . registry registry";
+  
+  }
+  
+  #allmessages {
+    width: 50vw;
+    max-height: auto;
+    border-style: solid;
+    border-color: firebrick;
+    border-width: 2px;
+    margin: 5px;
+    padding: 5px;
+    overscroll-behavior-y: auto;
+  }
+
+
+
+
+
+
+
+
+/* #grid {
+  grid-area: partytime;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  width: 40vw
+} */
